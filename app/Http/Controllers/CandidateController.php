@@ -35,15 +35,18 @@ class CandidateController extends Controller
      */
     public function store(Request $request)
     {
-        $file = $request->file('foto');
+         if($request->hasfile('foto'))
+
+         {
+            $file = $request->file('foto');
             $name=time().$file->getClientOriginalName();
-            $file->move(public_path().'/images/', $nome);
+            $file->move(public_path().'/images/', $name);
          }
         $candidate= new \App\Candidate;
-        $candidate->nome=$request->get('nome');
-        $candidate->nomeex=$request->get('nomeex');
-        $candidate->filename=$nome;
-        $candidate->partido=$request->get('partido');
+        $candidate->nomecompleto=$request->get('nomecompleto');
+        $candidate->nomeexibicao=$request->get('nomeexibicao');
+        $candidate->foto=$name;
+        $candidate->partido_id=$request->get('partido_id');
         $candidate->numero=$request->get('numero');
         $candidate->endereco=$request->get('endereco');
         $candidate->save();
@@ -83,7 +86,18 @@ class CandidateController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $candidate= \App\Candidate::find($id);
+
+
+        $candidate->nomecompleto=$request->get('nomecompleto');
+        $candidate->nomeexibicao=$request->get('nomeexibicao');
+        $candidate->foto=$request->get('foto');
+        $candidate->partido_id=$request->get('partido_id');
+        $candidate->numero=$request->get('numero');
+        $candidate->endereco=$request->get('endereco');
+        $candidate->save();
+
+        return redirect ('candidates');
     }
 
     /**
@@ -94,6 +108,8 @@ class CandidateController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $candidate = \App\Candidate::find($id);
+        $candidate->delete();
+        return redirect('candidates')->with('success','Information has been  deleted');
     }
 }

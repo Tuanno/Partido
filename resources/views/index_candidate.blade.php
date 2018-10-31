@@ -22,6 +22,7 @@
         <th>Id</th>
         <th>Nome</th>
         <th>NomeExibicao</th>
+        <th>foto</th>
         <th>partido</th>
         <th>Numero</th>
         <th>Endereco</th>
@@ -33,12 +34,13 @@
       @foreach($candidates as $candidate)
     
       <tr>
-        <td>{{$broken['id']}}</td>
-        <td>{{$broken['nome']}}</td>
-        <td>{{$broken['nomeex']}}</td>
-        <td>{{$broken['partido']}}</td>
-        <td>{{$broken['numero']}}</td>
-        <td>{{$broken['endereco']}}</td>
+        <td>{{$candidate['id']}}</td>
+        <td>{{$candidate['nomecompleto']}}</td>
+        <td>{{$candidate['nomeexibicao']}}</td>
+        <td><img src="/images/{{$candidate['foto']}}" style="width:50px; height:50px;  "></td>
+        <td>{{$candidate['partido_id']}}</td>
+        <td>{{$candidate['numero']}}</td>
+        <td>{{$candidate['endereco']}}</td>
         
         <td><a href="{{action('CandidateController@edit', $candidate['id'])}}" class="btn btn-warning">Edit</a></td>
         <td>
