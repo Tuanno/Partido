@@ -14,7 +14,7 @@ class CandidateController extends Controller
     public function index()
     {
         $candidates=\App\Candidate::all();
-        return view('index_candidate',compact('candidates'));
+        return view('candidate/index',compact('candidates'));
     }
 
     /**
@@ -24,7 +24,22 @@ class CandidateController extends Controller
      */
     public function create()
     {
-        return view('create_candidate');
+        return view('candidate/create');
+    }
+
+
+    public function votar()
+    {
+        return view('votar');
+    }
+
+
+    public function view_votar()
+    {
+        $candidates=\App\Candidate::all();
+
+        $candidate->voto=
+        return view('candidate/index',compact('candidates'));
     }
 
     /**
@@ -74,7 +89,7 @@ class CandidateController extends Controller
     public function edit($id)
     {
          $candidate = \App\Candidate::find($id);
-        return view('edit_candidate',compact('candidate','id'));
+        return view('candidate/edit',compact('candidate','id'));
     }
 
     /**
@@ -86,12 +101,22 @@ class CandidateController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        if($request->hasfile('foto'))
+
+         {
+            $file = $request->file('foto');
+            $name=time().$file->getClientOriginalName();
+            $file->move(public_path().'/images/', $name);
+         }
         $candidate= \App\Candidate::find($id);
-
-
         $candidate->nomecompleto=$request->get('nomecompleto');
         $candidate->nomeexibicao=$request->get('nomeexibicao');
-        $candidate->foto=$request->get('foto');
+        if (isset ($name)) {
+            
+            $candidate->foto=$name;
+
+        }
         $candidate->partido_id=$request->get('partido_id');
         $candidate->numero=$request->get('numero');
         $candidate->endereco=$request->get('endereco');

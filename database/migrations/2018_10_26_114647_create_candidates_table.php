@@ -22,6 +22,8 @@ class CreateCandidatesTable extends Migration
             $table->foreign('partido_id')->references('id')->on('brokens');
             $table->integer('numero');
             $table->string('endereco');
+            $table->integer('voto')->default('0');
+
             $table->timestamps();
         });
     }

@@ -1,23 +1,19 @@
 <!-- edit.blade.php -->
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Laravel 5.6 CRUD </title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  </head>
-  <body>
+@extends('layouts.app')
+
+@section('content')
     <div class="container">
       <h2>Editar Candidato</h2><br  />
-        <form method="post" action="{{action('CandidateController@update', $id)}}">
+        <form method="post" action="{{action('CandidateController@update', $id)}}" enctype="multipart/form-data">
         @csrf
         <input name="_method" type="hidden" value="PATCH">
+
         <div class="row">
           <div class="col-md-4"></div>
-          <div class="form-group col-md-4">
-            <label for="nomecompleto">NomeCompleto:</label>
-            <input type="text" class="form-control" name="nomecompleto" value="{{$candidate->nomecompleto}}">
-          </div>
+            <div class="form-group col-md-4">
+              <label for="nomecompleto">NomeCompleto:</label>
+              <input type="text" class="form-control" name="nomecompleto" value="{{$candidate->nomecompleto}}">
+            </div>
         </div>
         <div class="row">
           <div class="col-md-4"></div>
@@ -25,13 +21,13 @@
               <label for="nomeexibicao">NomeDeExibicao:</label>
               <input type="text" class="form-control" name="nomeexibicao" value="{{$candidate->nomeexibicao}}">
             </div>
-          </div>
-          </div>
-          <div class="row">
+        </div>
+        </div>
+        <div class="row">
           <div class="col-md-4"></div>
-          <div class="form-group col-md-4">
-            <input type="file" name="foto" value="{{$candidate->foto}}">    
-         </div>
+              <div class="form-group col-md-4">
+              <input type="file" name="foto" value="{{$candidate->foto}}">    
+            </div>
         </div>
         <div class="row">
           <div class="col-md-4"></div>
@@ -62,5 +58,4 @@
         </div>
       </form>
     </div>
-  </body>
-</html>
+   @endsection

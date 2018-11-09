@@ -24,6 +24,8 @@ Route::get('/', function () {
 Route::get('/brokens', 'BrokenController@index');
 Route::get('/brokens/create', 'BrokenController@create');
 
+Route::get('/votar', 'CandidateController@votar');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

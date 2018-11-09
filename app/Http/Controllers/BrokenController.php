@@ -14,7 +14,7 @@ class BrokenController extends Controller
     public function index()
     {
         $brokens=\App\Broken::all();
-        return view('index_broken',compact('brokens'));
+        return view('broken/index',compact('brokens'));
     }
 
     /**
@@ -24,7 +24,7 @@ class BrokenController extends Controller
      */
     public function create()
     {
-        return view('create_broken');
+        return view('broken/create');
     }
 
     /**
@@ -65,7 +65,7 @@ class BrokenController extends Controller
     public function edit($id)
     {
         $broken = \App\Broken::find($id);
-        return view('edit_broken',compact('broken','id'));
+        return view('broken/edit',compact('broken','id'));
     }
 
     /**

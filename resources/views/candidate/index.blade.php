@@ -1,16 +1,8 @@
 <!-- index.blade.php -->
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Index Page</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  </head>
-  <body>
-    <div class="container">
-      <a class="btn btn-primary" href="{{action('CandidateController@create')}}">Cadastrar candidato</a>
-    <br />
+@section('content')
+    
     @if (\Session::has('success'))
       <div class="alert alert-success">
         <p>{{ \Session::get('success') }}</p>
@@ -37,7 +29,7 @@
         <td>{{$candidate['id']}}</td>
         <td>{{$candidate['nomecompleto']}}</td>
         <td>{{$candidate['nomeexibicao']}}</td>
-        <td><img src="/images/{{$candidate['foto']}}" style="width:50px; height:50px;  "></td>
+        <td><img src="/images/{{$candidate['foto']}}" style="width:70px; height:70px;  "></td>
         <td>{{$candidate['partido_id']}}</td>
         <td>{{$candidate['numero']}}</td>
         <td>{{$candidate['endereco']}}</td>
@@ -55,5 +47,4 @@
     </tbody>
   </table>
   </div>
-  </body>
-</html>
+  @endsection
