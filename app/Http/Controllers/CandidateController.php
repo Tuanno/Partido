@@ -31,11 +31,12 @@ class CandidateController extends Controller
     public function votar(Request $request)
     {
         
-         $candidate->votar=$request->get('voto');
-         $candidate = DB::select('select * from candidate where id = ?', [1]);
-             
+         $numero_candidato=$request->get('numero_candidato');
+         $candidate = \App\Candidate::where('numero', '=', $numero_candidato)->firstOrFail();
+         $candidate->voto=$candidate->voto+1; 
+         $candidate->save();   
         
-        return view('voto',compact('candidates'));
+        return view('candidates');
     }
 
 

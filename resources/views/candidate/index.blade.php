@@ -16,6 +16,7 @@
         <th>NomeExibicao</th>
         <th>foto</th>
         <th>partido</th>
+        <th>votos</th>
         <th>Numero</th>
         <th>Endereco</th>
         <th colspan="2">Action</th>
@@ -31,6 +32,7 @@
         <td>{{$candidate['nomeexibicao']}}</td>
         <td><img src="/images/{{$candidate['foto']}}" style="width:70px; height:70px;"></td>
         <td>{{$candidate['partido_id']}}</td>
+        <td>{{$candidate['voto']}}</td>
         <td>{{$candidate['numero']}}</td>
         <td>{{$candidate['endereco']}}</td>
         

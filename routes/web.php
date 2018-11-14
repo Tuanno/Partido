@@ -28,6 +28,11 @@ Route::get('/candidate', 'CandidateController@index');
 Route::get('/candidates/create', 'CandidateController@create');
 
 Route::get('/voto', 'CandidateController@view_votar');
+// Route::get('candidates', 'CandidateController@votar');
+
+Route::get('/votar', 'CandidateController@votar');
+
+//Route::resource('candidates', 'CandidateController')->names(['create' => 'candidates.votar']);
 
 Auth::routes();
 
