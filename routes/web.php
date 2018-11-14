@@ -24,7 +24,10 @@ Route::get('/', function () {
 Route::get('/brokens', 'BrokenController@index');
 Route::get('/brokens/create', 'BrokenController@create');
 
-Route::get('/votar', 'CandidateController@votar');
+Route::get('/candidate', 'CandidateController@index');
+Route::get('/candidates/create', 'CandidateController@create');
+
+Route::get('/voto', 'CandidateController@view_votar');
 
 Auth::routes();
 

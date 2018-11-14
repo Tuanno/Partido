@@ -41,20 +41,17 @@
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
-                            <a class="btn btn-primary" href="{{action('BrokenController@create')}}">Cadastrar Partido</a>
+                            <a  class="nav-link" href="{{action('BrokenController@create')}}">Cadastrar Partido</a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="btn btn-primary" href="{{action('CandidateController@create')}}">Cadastrar candidato</a>
+                            <a class="nav-link" href="{{action('CandidateController@create')}}">Cadastrar candidato</a>
                         </li>
-
+                        <li class="nav-item"> 
+                            <a class="nav-link" href="{{action('CandidateController@view_votar')}}">Votar</a>
+                        </li>
                         <li class="nav-item">
-                            <a class="btn btn-primary" href="{{action('CandidateController@votar')}}">Votar</a>
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
-                        
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
                             <li class="nav-item">
                                 @if (Route::has('register'))
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>

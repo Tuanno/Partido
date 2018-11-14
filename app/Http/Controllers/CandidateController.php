@@ -28,18 +28,20 @@ class CandidateController extends Controller
     }
 
 
-    public function votar()
+    public function votar(Request $request)
     {
-        return view('votar');
+        
+         $candidate->votar=$request->get('voto');
+         $candidate = DB::select('select * from candidate where id = ?', [1]);
+             
+        
+        return view('voto',compact('candidates'));
     }
 
 
     public function view_votar()
     {
-        $candidates=\App\Candidate::all();
-
-        $candidate->voto=
-        return view('candidate/index',compact('candidates'));
+       return view('votar');
     }
 
     /**

@@ -29,12 +29,14 @@
         <td>{{$candidate['id']}}</td>
         <td>{{$candidate['nomecompleto']}}</td>
         <td>{{$candidate['nomeexibicao']}}</td>
-        <td><img src="/images/{{$candidate['foto']}}" style="width:70px; height:70px;  "></td>
+        <td><img src="/images/{{$candidate['foto']}}" style="width:70px; height:70px;"></td>
         <td>{{$candidate['partido_id']}}</td>
         <td>{{$candidate['numero']}}</td>
         <td>{{$candidate['endereco']}}</td>
         
-        <td><a href="{{action('CandidateController@edit', $candidate['id'])}}" class="btn btn-warning">Edit</a></td>
+        <td><a href="{{action('CandidateController@edit', $candidate['id'])}}" class="btn btn-warning">Edit</a>
+
+      </td>
         <td>
           <form action="{{action('CandidateController@destroy', $candidate['id'])}}" method="post">
             @csrf
