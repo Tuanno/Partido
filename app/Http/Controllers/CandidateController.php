@@ -36,7 +36,7 @@ class CandidateController extends Controller
          $candidate->voto=$candidate->voto+1; 
          $candidate->save();   
         
-        return view('candidates');
+        return view('candidates')->with('success', 'Voto Computado com Sucesso');
     }
 
 

@@ -16,6 +16,8 @@ Route::resource('brokens','BrokenController');
 
 Route::resource('candidates','CandidateController');
 
+Route::resource('elections','ElectionController');
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,13 +26,16 @@ Route::get('/', function () {
 Route::get('/brokens', 'BrokenController@index');
 Route::get('/brokens/create', 'BrokenController@create');
 
-Route::get('/candidate', 'CandidateController@index');
+Route::get('/candidates', 'CandidateController@index');
 Route::get('/candidates/create', 'CandidateController@create');
 
 Route::get('/voto', 'CandidateController@view_votar');
 // Route::get('candidates', 'CandidateController@votar');
 
 Route::get('/votar', 'CandidateController@votar');
+
+Route::get('/election/create', 'ElectionController@create');
+Route::get('/elections', 'ElectionController@index');
 
 //Route::resource('candidates', 'CandidateController')->names(['create' => 'candidates.votar']);
 

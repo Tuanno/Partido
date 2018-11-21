@@ -46,6 +46,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{action('CandidateController@create')}}">Cadastrar candidato</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{action('ElectionController@create')}}">Cadastrar Eleição</a>
+                        </li>
                         <li class="nav-item"> 
                             <a class="nav-link" href="{{action('CandidateController@view_votar')}}">Votar</a>
                         </li>
