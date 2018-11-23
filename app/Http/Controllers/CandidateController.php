@@ -36,7 +36,7 @@ class CandidateController extends Controller
          $candidate->voto=$candidate->voto+1; 
          $candidate->save();   
         
-        return view('candidates')->with('success', 'Voto Computado com Sucesso');
+        return redirect('candidates')->with('success', 'Voto Computado com Sucesso');
     }
 
 
@@ -69,7 +69,7 @@ class CandidateController extends Controller
         $candidate->endereco=$request->get('endereco');
         $candidate->save();
         
-        return redirect('candidates')->with('success', 'Information has been added');
+        return redirect('candidates')->with('success', 'Candidato Cadastrado com Sucesso');
     }
 
     /**
@@ -138,6 +138,6 @@ class CandidateController extends Controller
     {
         $candidate = \App\Candidate::find($id);
         $candidate->delete();
-        return redirect('candidates')->with('success','Information has been  deleted');
+        return redirect('candidates')->with('success','Candidato Excluido com Sucesso');
     }
 }

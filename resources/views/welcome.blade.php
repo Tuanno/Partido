@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Eleição</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -13,8 +13,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color:#000000;
+                color:orange;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -50,7 +50,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color:orange;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -71,24 +71,22 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('login') }}">Entrar</a>
+                        <a href="{{ route('register') }}">Cadastre-se</a>
                     @endauth
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Eleição
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a  class="nav-link" href="{{action('BrokenController@create')}}">Cadastrar Partido</a>
+                    <a class="nav-link" href="{{action('CandidateController@create')}}">Cadastrar candidato</a>
+                    <a class="nav-link" href="{{action('ElectionController@create')}}">Cadastrar Eleição</a>
+                    <a class="nav-link" href="{{action('CandidateController@view_votar')}}">Votar</a>
                 </div>
             </div>
         </div>

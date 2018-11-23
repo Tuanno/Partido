@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container">
-      <h2>Cadastro do Candidato</h2><br/>
+      <h2><center>Cadastro do Candidato</center></h2><br/>
       <form method="post" action="{{url('candidates')}}" enctype="multipart/form-data">
         @csrf
         <div class="row">

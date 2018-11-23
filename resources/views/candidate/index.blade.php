@@ -19,7 +19,7 @@
         <th>votos</th>
         <th>Numero</th>
         <th>Endereco</th>
-        <th colspan="2">Action</th>
+        <th colspan="2">Editar</th>
       </tr>
     </thead>
     <tbody>

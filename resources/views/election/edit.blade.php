@@ -1,7 +1,3 @@
-<!-- edit.blade.php -->
-@extends('layouts.app')
-
-@section('content')
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,7 +7,7 @@
   </head>
   <body>
   	<div class="container">
-      <h2>Editar Eleição</h2><br  />
+      <h2><center>Editar Eleição</center></h2><br  />
         <form method="post" action="{{action('ElectionController@update', $id)}}">
         @csrf
         <input name="_method" type="hidden" value="PATCH">
@@ -37,3 +33,5 @@
         </div>
       </form>
     </div>
+    </body>
+    </html>

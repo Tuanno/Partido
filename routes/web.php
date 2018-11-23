@@ -34,8 +34,9 @@ Route::get('/voto', 'CandidateController@view_votar');
 
 Route::get('/votar', 'CandidateController@votar');
 
-Route::get('/election/create', 'ElectionController@create');
 Route::get('/elections', 'ElectionController@index');
+Route::get('/elections/create', 'ElectionController@create');
+
 
 //Route::resource('candidates', 'CandidateController')->names(['create' => 'candidates.votar']);
 

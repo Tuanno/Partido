@@ -17,6 +17,8 @@ class CreateElectionsTable extends Migration
             $table->increments('id');
             $table->integer('ano');
             $table->string('nome');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

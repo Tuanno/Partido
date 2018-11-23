@@ -42,7 +42,7 @@ class BrokenController extends Controller
         $broken->endereco=$request->get('endereco');
         $broken->save();
 
-        return redirect('brokens')->with('success', 'Information has been added');
+        return redirect('brokens')->with('success', 'Cadastro do Partido com Sucesso');
     }
 
     /**
@@ -96,6 +96,6 @@ class BrokenController extends Controller
     {
         $broken = \App\Broken::find($id);
         $broken->delete();
-        return redirect('brokens')->with('success','Information has been  deleted');
+        return redirect('brokens')->with('success','Partido Excluido com Sucesso');
     }
 }

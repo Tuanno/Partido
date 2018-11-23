@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container">
-      <h2>cadastro de Partido</h2><br/>
+      <h2><center>Cadastro de Partido</center></h2><br/>
       <form method="post" action="{{url('brokens')}}" enctype="multipart/form-data">
         @csrf
         <div class="row">

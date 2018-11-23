@@ -38,8 +38,9 @@ class ElectionController extends Controller
         $election= new \App\Election;
         $election->ano=$request->get('ano');
         $election->nome=$request->get('nome');
+        $election->save();
 
-        return redirect('elections')->with('success', 'Information has been added');
+        return redirect('elections')->with('success', 'Eleição Cadastrada com Sucesso');
     }
 
     /**
@@ -74,7 +75,7 @@ class ElectionController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $election= \App\Election::find($id);
+        $election= \App\Election::find($id);
         $election->ano=$request->get('ano');
         $election->nome=$request->get('nome');
         $election->save();
@@ -92,6 +93,6 @@ class ElectionController extends Controller
     {
         $election = \App\Election::find($id);
         $election->delete();
-        return redirect('elections')->with('success','Information has been  deleted');
+        return redirect('elections')->with('success','Eleição Excluida com Sucesso');
     }
 }
