@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBrokensTable extends Migration
+class CreateVotesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateBrokensTable extends Migration
      */
     public function up()
     {
-        Schema::create('brokens', function (Blueprint $table) {
+        Schema::create('votes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome');
-            $table->string('sigla');
-            $table->integer('numero');
-            $table->string('endereco');
-            $table->unsignedInteger('election_id');
-            $table->foreign('election_id')->references('id')->on('elections');
+            $table->unsignedInteger('candidate_id');
+            $table->foreign('candidate_id')->references('id')->on('candidates');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ class CreateBrokensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brokens');
+        Schema::dropIfExists('votes');
     }
 }
