@@ -24,6 +24,7 @@
         <th>Sigla</th>
         <th>Numero</th>
         <th>Endereco</th>
+
         <th colspan="2">Action</th>
       </tr>
     </thead>
@@ -37,6 +38,7 @@
         <td>{{$broken['sigla']}}</td>
         <td>{{$broken['numero']}}</td>
         <td>{{$broken['endereco']}}</td>
+
         
         <td><a href="{{action('BrokenController@edit', $broken['id'])}}" class="btn btn-warning">Edit</a></td>
         <td>
